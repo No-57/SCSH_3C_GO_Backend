@@ -1,0 +1,100 @@
+[2023-05-20 11:21:35.528]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-05-20 11:21:35.528]	[DEBUG]	[NO57_backend/main.go:21]	==start
+[2023-05-20 11:22:00.879]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-05-20 11:22:00.879]	[DEBUG]	[NO57_backend/main.go:21]	==start
+[2023-05-20 16:25:05.405]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-05-20 16:25:05.405]	[DEBUG]	[NO57_backend/main.go:26]	==start
+[2023-05-20 16:25:42.243]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-05-20 16:25:42.243]	[DEBUG]	[NO57_backend/main.go:26]	==start
+[2023-05-20 16:25:47.290]	[DEBUG]	[NO57_backend/main.go:20]	http.StatusOK=200
+[2023-06-07 01:25:41.003]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:27:36.866]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:29:10.202]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:29:10.205]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-07 01:31:55.012]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:31:55.015]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-07 01:31:55.015]	[DEBUG]	[NO57_backend/main.go:34]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-07 01:33:50.249]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:33:50.252]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-07 01:33:50.252]	[DEBUG]	[NO57_backend/main.go:34]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-07 01:35:03.501]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:35:03.504]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-07 01:35:03.504]	[DEBUG]	[NO57_backend/main.go:34]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-07 01:38:24.190]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:38:24.193]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-07 01:38:24.193]	[DEBUG]	[NO57_backend/main.go:34]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-07 01:43:24.470]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:43:24.473]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-07 01:43:24.473]	[DEBUG]	[NO57_backend/main.go:34]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-07 01:45:39.914]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-07 01:45:39.916]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-07 01:45:39.916]	[DEBUG]	[NO57_backend/main.go:34]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-10 22:20:03.994]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-10 22:20:03.997]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-10 22:20:03.997]	[DEBUG]	[NO57_backend/main.go:30]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-10 22:26:22.620]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-10 22:26:22.623]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-10 22:26:22.623]	[DEBUG]	[NO57_backend/main.go:31]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-10 22:28:29.249]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-10 22:28:29.252]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-10 22:28:29.252]	[DEBUG]	[NO57_backend/main.go:33]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-10 23:50:44.099]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-10 23:50:44.103]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-10 23:50:44.103]	[DEBUG]	[NO57_backend/main.go:33]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-10 23:54:39.558]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-10 23:54:39.561]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-10 23:54:39.561]	[DEBUG]	[NO57_backend/main.go:33]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-10 23:55:39.677]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-10 23:55:39.680]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-10 23:55:39.680]	[DEBUG]	[NO57_backend/main.go:33]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-10 23:58:53.378]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-10 23:58:53.381]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-10 23:58:53.381]	[DEBUG]	[NO57_backend/main.go:33]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-11 00:10:02.658]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-11 00:10:02.662]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-11 00:10:02.662]	[DEBUG]	[NO57_backend/main.go:33]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-11 00:10:39.446]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-11 00:10:39.449]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-11 00:10:39.449]	[DEBUG]	[NO57_backend/main.go:33]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-11 22:04:11.733]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-11 22:04:11.736]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-11 22:04:11.736]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-11 22:28:40.597]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-11 22:28:40.600]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-11 22:28:40.600]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:21:37.701]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-12 00:21:37.704]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-12 00:21:37.704]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:21:37.705]	[DEBUG]	[NO57_backend/main.go:64]	Static set OK
+[2023-06-12 00:21:37.705]	[DEBUG]	[NO57_backend/main.go:69]	loginPage
+[2023-06-12 00:29:02.580]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-12 00:29:02.583]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-12 00:29:02.583]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:30:21.110]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-12 00:30:21.113]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-12 00:30:21.113]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:30:21.113]	[DEBUG]	[NO57_backend/main.go:67]	Static set OK
+[2023-06-12 00:30:21.215]	[DEBUG]	[NO57_backend/main.go:72]	loginPage
+[2023-06-12 00:36:10.652]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-12 00:36:10.655]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-12 00:36:10.655]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:36:10.656]	[DEBUG]	[NO57_backend/main.go:67]	Static set OK
+[2023-06-12 00:36:10.656]	[DEBUG]	[NO57_backend/main.go:72]	loginPage
+[2023-06-12 00:42:13.138]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-12 00:42:13.142]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-12 00:42:13.142]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:42:13.142]	[DEBUG]	[NO57_backend/main.go:67]	Static set OK
+[2023-06-12 00:42:13.142]	[DEBUG]	[NO57_backend/main.go:72]	loginPage
+[2023-06-12 00:42:52.452]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-12 00:42:52.455]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-12 00:42:52.455]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:42:52.456]	[DEBUG]	[NO57_backend/main.go:67]	Static set OK
+[2023-06-12 00:42:52.456]	[DEBUG]	[NO57_backend/main.go:72]	loginPage
+[2023-06-12 00:44:39.933]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-06-12 00:44:39.936]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-06-12 00:44:39.936]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql
+[2023-06-12 00:44:39.937]	[DEBUG]	[NO57_backend/main.go:67]	Static set OK
+[2023-06-12 00:44:39.937]	[DEBUG]	[NO57_backend/main.go:72]	loginPage
+[2023-07-07 00:30:26.780]	[INFO]	[Utils/LogUtil.go:23]	===log initialize success===
+[2023-07-07 00:30:26.785]	[INFO]	[Utils/PropertiesUtil.go:30]	===properties initialize success===
+[2023-07-07 00:30:26.785]	[DEBUG]	[db/init.go:22]	url = test:password@tcp(127.0.0.1:3306)/ARCHIVE, driver=mysql

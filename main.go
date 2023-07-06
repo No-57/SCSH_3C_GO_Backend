@@ -1,91 +1,74 @@
 package main
 
 import (
-	"net/http"
-	"strconv"
-
+	"NO57_backend/db"
+	"NO57_backend/pkg/Utils"
+	"fmt"
 	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
+	"log"
+	"net/http"
 )
 
-var balance = 0
-
-type Result struct {
-	Data struct {
-		Amount  int    `json:"amount"`
-		Status  string `json:"status"`
-		Message string `json:"message"`
-	} `json:"data"`
+// USER_DATA table 的結構
+type userData struct {
+	UserID   string `xorm:"'USER_ID'"`
+	UserName string `xorm:"'USER_NAME'"`
+	UserPwd  string `xorm:"'USER_PWD'"`
+	Sex      string `xorm:"'SEX'"`
+	Nickname string `xorm:"'NICKNAME'"`
+	Email    string `xorm:"'EMAIL'"`
 }
-
-var result = Result{}
 
 func main() {
-	router := gin.Default()
-	router.GET("/deposit/:input", deposit)
-	router.GET("/withdraw/:input", withdraw)
-	router.GET("/balance/", getBalance)
 
-	router.Run(":80")
-}
+	Utils.InitProperties("conf/", "config", "properties")
+	//Utils.InitProperties("/Users/kaoweicheng/GolandProjects/NO57_backend/conf/", "config", "properties")
 
-// getBalance 取得帳戶內餘額
-func getBalance(context *gin.Context) {
-	result.Data.Amount = balance // 返回的Amount為當前餘額
-	result.Data.Status = "ok"    // 查詢時，可將預設狀態設為成功
-	result.Data.Message = ""     // 成功時Message提示為空
-	context.JSON(http.StatusNotFound, result)
-	//context.JSON(http.StatusOK, result)
-}
+	//db初始化
+	db.InitDB()
+	engine := db.Engine
 
-// deposit 儲值、存款
-func deposit(context *gin.Context) {
-	input := context.Param("input")
-	amount, err := strconv.Atoi(input)
+	r := gin.Default()
 
-	result.Data.Status = "failed" // 存款操作時，可將預設狀態設為失敗
-	result.Data.Message = ""
-
-	if err == nil {
-		if amount <= 0 {
-			result.Data.Amount = 0 // 操作未成功，返回金額為0
-			result.Data.Message = "操作失敗，存款金額需大於0元！"
-		} else {
-			balance += amount
-			result.Data.Amount = balance // 操作成功，返回的Amount為儲值後的餘額
-			result.Data.Status = "ok"    // 操作成功
+	r.POST("/login", func(c *gin.Context) {
+		var request struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
 		}
-	} else {
-		result.Data.Amount = 0 // 操作未成功，返回金額為0
-		result.Data.Message = "操作失敗，輸入有誤！"
-	}
-	context.JSON(http.StatusOK, result)
-}
 
-// withdraw 提款
-func withdraw(context *gin.Context) {
-	result.Data.Status = "failed" // 提款操作時，可將預設狀態設為失敗
-	result.Data.Message = ""
-
-	input := context.Param("input")
-	amount, err := strconv.Atoi(input)
-
-	if err == nil {
-		if amount <= 0 {
-			result.Data.Amount = 0 // 操作未成功，返回金額為0
-			result.Data.Message = "操作失敗，提款金額需大於0元！"
-		} else {
-			if balance-amount < 0 {
-				result.Data.Amount = 0 // 操作未成功，返回金額為0
-				result.Data.Message = "操作失敗，餘額不足！"
-			} else {
-				balance -= amount
-				result.Data.Amount = balance // 操作成功，返回的Amount為提款後的餘額
-				result.Data.Status = "ok"
-			}
+		if err := c.ShouldBindJSON(&request); err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
 		}
-	} else {
-		result.Data.Amount = 0 // 操作未成功，返回金額為0
-		result.Data.Message = "操作失敗，輸入有誤！"
-	}
-	context.JSON(http.StatusOK, result)
+
+		// 收到的請求帳密
+		fmt.Println("usernamd=", request.Username)
+		fmt.Println("password=", request.Password)
+
+		// 測試資料庫連線
+		if err := engine.Ping(); err != nil {
+			log.Fatal(err)
+		}
+
+		// 根據用戶名和密碼查詢用戶
+		user := userData{}
+		exists, err := engine.Table("USER_DATA").Where("USER_ID = ? AND USER_PWD = ?", request.Username, request.Password).Get(&user)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "資料庫錯誤"})
+			return
+		}
+
+		if exists {
+			// 用戶存在且密碼正確
+			c.JSON(http.StatusOK, gin.H{"message": "登錄成功"})
+		} else {
+			// 用戶不存在或密碼不正確
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "無效的用戶名稱或密碼"})
+		}
+	})
+
+	// port
+	r.Run(":8080")
+
 }
