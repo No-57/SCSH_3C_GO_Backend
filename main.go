@@ -13,6 +13,7 @@ import (
 func main() {
 	http.HandleFunc("/health", health)
 	http.HandleFunc("/search", search)
+	http.HandleFunc("/devices", devices)
 
 	err := http.ListenAndServe(":80", nil)
 
@@ -62,4 +63,22 @@ func search(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
+}
+
+func devices(w http.ResponseWriter, r *http.Request) {
+	deviceId := r.URL.Query().Get("id")
+
+	// open database connection
+	// 		account: vince
+	// 		password: 1234
+	// 		host: 127.0.0.1
+	// 		port: 3306
+	// 		schema: vince_test
+
+
+	// execute sql
+
+
+    // generate http response
+
 }
