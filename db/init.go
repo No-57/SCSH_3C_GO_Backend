@@ -3,7 +3,7 @@
 package db
 
 import (
-	"NO57_backend/pkg/Utils"
+	"SCSH_3C_GO_Backend/pkg/Utils"
 	"fmt"
 	"github.com/go-xorm/xorm"
 )
