@@ -4,9 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-    
+
 	// DB
 	"database/sql"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -27,14 +28,15 @@ type HealthResponse struct {
 }
 
 func health(w http.ResponseWriter, r *http.Request) {
-	response := HealthResponse {
+	fmt.Println("health is called")
+	response := HealthResponse{
 		Message: "Service is healthy !",
 	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
-	err := json.NewEncoder(w).Encode(response) 
+	err := json.NewEncoder(w).Encode(response)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -43,22 +45,22 @@ func health(w http.ResponseWriter, r *http.Request) {
 
 type SearchResponse struct {
 	Message string `json:"message"`
-	Number string `json:"number"`
+	Number  string `json:"number"`
 }
 
 func search(w http.ResponseWriter, r *http.Request) {
 
 	number := r.URL.Query().Get("number")
 
-	response := SearchResponse {
+	response := SearchResponse{
 		Message: "search is called !",
-		Number: number,
+		Number:  number,
 	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 
-	err := json.NewEncoder(w).Encode(response) 
+	err := json.NewEncoder(w).Encode(response)
 
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -66,11 +68,11 @@ func search(w http.ResponseWriter, r *http.Request) {
 }
 
 type DevicesResponse struct {
-	Name string `json:"name"`
+	Names []string `json:"names"`
 }
 
 func devices(w http.ResponseWriter, r *http.Request) {
-	deviceId := r.URL.Query().Get("id")
+	deviceName := r.URL.Query().Get("name")
 
 	// open database connection
 	// 		account: vince
@@ -78,29 +80,48 @@ func devices(w http.ResponseWriter, r *http.Request) {
 	// 		host: 127.0.0.1
 	// 		port: 3306
 	// 		schema: vince_test
-    db, err := sql.Open("mysql", "vince:1234@tcp(127.0.0.1:3306)/vince_test")
-    if err != nil {
-        panic(err.Error())
-    }
-    defer db.Close()
+	db, err := sql.Open("mysql", "vince:1234@tcp(127.0.0.1:3306)/vince_test")
+	if err != nil {
+		panic(err.Error())
+	}
+	defer db.Close()
 
 	// execute sql
-	var name string
-	err = db.QueryRow("SELECT name FROM DEVICE WHERE id = '" + deviceId + "';").Scan(&name)
+	rows, err := db.Query("SELECT name FROM DEVICE WHERE name like '%" + deviceName + "%';")
+
 	if err != nil {
-		if err == sql.ErrNoRows {
-			fmt.Println("No data found")
-			w.WriteHeader(http.StatusNotFound)
-			return
-		}
 		fmt.Println("Error executing SQL query:", err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+	defer rows.Close()
 
-    // generate http response
+	// generate http response
+	var names []string
+	for rows.Next() {
+		var name string
+		if err := rows.Scan(&name); err != nil {
+			fmt.Println("Error scanning row:", err)
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		names = append(names, name)
+	}
+
+	if err := rows.Err(); err != nil {
+		fmt.Println("Error with rows:", err)
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	if len(names) == 0 {
+		fmt.Println("No data found")
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
 	response := DevicesResponse{
-		Name: name,
+		Names: names,
 	}
 
 	w.Header().Set("Content-Type", "application/json")
