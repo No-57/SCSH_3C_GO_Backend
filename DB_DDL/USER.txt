@@ -1,0 +1,11 @@
+create table USER
+(
+    id         int auto_increment
+        primary key,
+    username   varchar(255)                        not null,
+    password   varchar(255)                        null,
+    email      varchar(255)                        not null,
+    created_at timestamp default CURRENT_TIMESTAMP null,
+    updated_at timestamp default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP
+);
+
