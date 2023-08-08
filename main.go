@@ -72,7 +72,10 @@ type DevicesResponse struct {
 }
 
 func devices(w http.ResponseWriter, r *http.Request) {
+
 	deviceName := r.URL.Query().Get("name")
+
+	fmt.Println("Endpoint /devices is called", deviceName)
 
 	// open database connection
 	// 		account: vince
